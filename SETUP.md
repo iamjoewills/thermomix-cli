@@ -207,10 +207,12 @@ not found? Run this to check the command is there:
 Setup has not been run, or it was cancelled. Run `thermomix-cli setup`.
 
 **`Cookidoo would not accept those details.`**
-The email or password is wrong. Check by signing in at
-[cookidoo.co.uk](https://cookidoo.co.uk) in a browser, then run
-`thermomix-cli setup` again. If you have just changed your Cookidoo password,
-this is what you would expect to see.
+Sign-in failed. First check the details on the Cookidoo website: sign in at
+[cookidoo.co.uk](https://cookidoo.co.uk) in a browser. If they do not work
+there either, correct them and run `thermomix-cli setup` again. If they *do*
+work there, the tool or the unofficial API it relies on may have changed –
+follow the update instructions below, or check whether others have reported the
+same thing. Changing your Cookidoo password over and over will not help.
 
 **`Could not reach Cookidoo.`**
 No internet, or Cookidoo is down. Try again in a few minutes.
@@ -230,9 +232,12 @@ Run the same command again with more detail turned on:
 THERMOMIX_CLI_DEBUG=1 thermomix-cli auth whoami
 ```
 
-That prints the technical error. Your password is removed from anything it
-prints, so the output is safe to paste into a bug report – but read it before
-you send it anywhere.
+That prints the technical error. Your saved password is scrubbed out of it, but
+the rest is not: debug output can still contain your email address, recipe or
+account identifiers and other personal details. Read it through and remove
+anything private before you share it. Never share the file your details are
+saved in (`~/.config/thermomix-cli/config.json`) – it holds your password in
+plain text.
 
 **It worked yesterday and today everything fails.**
 This is the expected end of an unofficial tool: Cookidoo may have changed its
