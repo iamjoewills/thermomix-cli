@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.DS_Store
+
+# Never commit anything that could hold Cookidoo details.
+.env
+config.json
+*.credentials

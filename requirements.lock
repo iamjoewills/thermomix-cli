@@ -1,0 +1,62 @@
+# The exact dependency versions this release was tested against.
+#
+# install.sh passes this file to uv as --constraint, so a fresh install gets
+# the combination that was actually verified rather than whatever resolves on
+# the day. The CLI's own pyproject.toml keeps open ranges, so this file is a
+# floor-and-ceiling record, not a second source of truth.
+#
+# To move to newer versions:
+#     uv pip compile pyproject.toml -o requirements.lock
+# then run the test suite and the install/update proof before committing it.
+aiofiles==25.1.0
+    # via cookidoo-api
+aiohappyeyeballs==2.7.1
+    # via aiohttp
+aiohttp==3.14.3
+    # via
+    #   thermomix-cli (pyproject.toml)
+    #   cookidoo-api
+aiosignal==1.4.0
+    # via aiohttp
+annotated-doc==0.0.5
+    # via typer
+attrs==26.1.0
+    # via aiohttp
+cookidoo-api==0.18.3
+    # via thermomix-cli (pyproject.toml)
+frozenlist==1.8.0
+    # via
+    #   aiohttp
+    #   aiosignal
+idna==3.19
+    # via yarl
+isodate==0.7.2
+    # via cookidoo-api
+markdown-it-py==4.2.0
+    # via rich
+mdurl==0.1.2
+    # via markdown-it-py
+multidict==6.8.0
+    # via
+    #   aiohttp
+    #   yarl
+propcache==0.5.2
+    # via
+    #   aiohttp
+    #   yarl
+pygments==2.21.0
+    # via rich
+rich==15.0.0
+    # via
+    #   thermomix-cli (pyproject.toml)
+    #   typer
+shellingham==1.5.4
+    # via typer
+typer==0.27.2
+    # via thermomix-cli (pyproject.toml)
+typing-extensions==4.16.0
+    # via
+    #   aiohttp
+    #   aiosignal
+yarl==1.24.5
+    # via aiohttp
